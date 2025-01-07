@@ -3,6 +3,7 @@ const express = require('express');
 const app = express();
 const swaggerjsdoc = require("swagger-jsdoc")
 const swaggerui = require("swagger-ui-express")
+const port = 4000;
 
 app.use(express.json());
 
@@ -47,7 +48,7 @@ const spacs = swaggerjsdoc(options)
 app.use("/api-docs", swaggerui.serve,
     swaggerui.setup(spacs)
 )
-server.listen(4000, () => {
+server.listen(port, () => {
     console.log('Server is listening at localhost on port 5000')
 })
 
