@@ -18,6 +18,7 @@ const getEvent = require('./api/getEvent');
 
 // Redirection des routes
 app.use('/', getEvent);
+app.use('/newClient', getEvent);
 // Server
 const server = http.createServer(app);
 
