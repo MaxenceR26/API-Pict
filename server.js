@@ -36,7 +36,7 @@ const options = {
             }
         },
         servers: [
-            { url: 'https://api-iat7.onrender.com' },
+            { url: 'https://api-iat7.onrender.com:4000/api' },
         ],
     },
     apis: ["./api/*.js"]
@@ -46,7 +46,7 @@ const spacs = swaggerjsdoc(options)
 app.use("/api-docs", swaggerui.serve,
     swaggerui.setup(spacs)
 )
-server.listen(5000, 'api-iat7.onrender.com', () => {
+server.listen(4000, () => {
     console.log('Server is listening at localhost on port 5000')
 })
 
