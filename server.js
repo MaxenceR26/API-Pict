@@ -36,7 +36,7 @@ const options = {
             }
         },
         servers: [
-            { url: 'https://api-iat7.onrender.com:4000/api' },
+            { url: 'https://api-iat7.onrender.com:4000' },
         ],
     },
     apis: ["./api/*.js"]
