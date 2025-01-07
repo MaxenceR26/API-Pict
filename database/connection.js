@@ -8,7 +8,7 @@ function handleDisconnect() {
         host     : process.env.DB_SERVER,
         user     : process.env.DB_USERNAME, // Corrige ici si DB_U2SERNAME est une faute de frappe
         password : process.env.DB_PASSWORD,
-        database : process.env.DB_NAMEA    // Corrige ici si DB_NAMEA est une faute de frappe
+        database : process.env.DB_NAME  // Corrige ici si DB_NAMEA est une faute de frappe
     });
 
     connection.connect((err) => {
