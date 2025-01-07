@@ -122,4 +122,28 @@ router.get('/', (req, res) => {
     });
 });
 
+// Route POST pour créer un événement
+router.post('/newClient', (req, res) => {
+    const { nom, prenom, email, state, id_machine} = req.body;
+
+    if (!nom || !prenom || !email || !state || !id_machine) {
+        res.status(400).send("Champs obligatoires manquants");
+        return;
+    }
+
+    const query = 'INSERT INTO events (event_date, event_title, descriptions, hours, type, name) VALUES (?, ?, ?, ?, ?, ?)';
+
+    connection.query(query, [nom, prenom, email, state, id_machine], function(err, results, fields) {
+        if (err) {
+            console.error("Une erreur est survenue:", err);
+            res.status(500).send("Une erreur s’est produite lors de l’exécution de la requête.");
+            return;
+        }
+
+        console.log("Requête exécutée avec succès:", results);
+        res.status(200).send("Événement créé avec succès");
+    });
+    console.log("req.body:", req.body);
+});
+
 module.exports = router;
