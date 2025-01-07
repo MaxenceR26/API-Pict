@@ -131,7 +131,7 @@ router.post('/newClient', (req, res) => {
         return;
     }
 
-    const query = 'INSERT INTO events (event_date, event_title, descriptions, hours, type, name) VALUES (?, ?, ?, ?, ?, ?)';
+    const query = 'INSERT INTO clients (nom, prenom, email, state, id_machine) VALUES (?, ?, ?, ?, ?)';
 
     connection.query(query, [nom, prenom, email, state, id_machine], function(err, results, fields) {
         if (err) {
